@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gbs4eo interactive notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EEF2; --surface:#F7F9FB; --ink:#172235; --muted:#5B6B7E; --rule:#C9D3DD; --accent:#1F5FBF;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1620; --surface:#17212D; --ink:#E4EAF1; --muted:#93A3B5; --rule:#2C3A49; --accent:#78A9FF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1620; --surface:#17212D; --ink:#E4EAF1; --muted:#93A3B5; --rule:#2C3A49; --accent:#78A9FF; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"STIX Two Text","Times New Roman",Georgia,serif;font-size:18px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:40px 16px 48px}
+h1{font-weight:600;font-size:clamp(1.6rem,3.4vw,2.35rem);line-height:1.12;margin:0 0 .45em}
+header p{margin:0 0 28px;color:var(--muted);max-width:68ch}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+a.card{display:block;background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:18px 20px;color:inherit;text-decoration:none}
+a.card:hover{border-color:var(--accent)}
+a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a.card h2{font-size:1.15rem;font-weight:600;margin:0 0 .3em;color:var(--accent)}
+a.card p{margin:0;color:var(--muted);font-size:.98rem}
+a.card .file{font-family:"Public Sans",system-ui,sans-serif;font-size:.75rem;color:var(--muted);margin-top:.6em;display:block}
+footer{margin-top:28px;font-family:"Public Sans",system-ui,sans-serif;font-size:.8rem;color:var(--muted)}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>gbs4eo interactive notes</h1>
+    <p>Interactive pages that go with the Gaussian boson sampling code in this repository. Pick one to open it.</p>
+  </header>
+  <ul>
+    <li>
+      <a class="card" href="walkthrough.html">
+        <h2>GBS pipeline walkthrough</h2>
+        <p>A graph followed through every step of the GBS finder: the adjacency matrix, the squeezing and interferometer derived from it, the photonic circuit, the photons the simulator returns, and how each photon pattern becomes a candidate subgraph and then a cluster.</p>
+        <span class="file">walkthrough.html</span>
+      </a>
+    </li>
+    <li>
+      <a class="card" href="truncatedBS.html">
+        <h2>Beam splitter: truncated circuit vs. ideal optics</h2>
+        <p>Send a Fock state into the beam splitter and compare where the photons go in the 28-gate qubit circuit (cutoff 4, two qubits per mode) and in an ideal, untruncated beam splitter.</p>
+        <span class="file">truncatedBS.html</span>
+      </a>
+    </li>
+  </ul>
+  <footer>Source: <a href="https://github.com/Quantum-Cosmos-Lab/gbs4eo">Quantum-Cosmos-Lab/gbs4eo</a></footer>
+</div>
+</body>
+</html>
